@@ -1,4 +1,4 @@
-.. default-rule:: block
+.. default-role:: code
 
 ##################################
  Hacking on completion-vlime.nvim

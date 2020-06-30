@@ -1,4 +1,4 @@
-.. default-rule:: block
+.. default-role:: code
 
 ##################################
  Vlime source for completion-nvim
