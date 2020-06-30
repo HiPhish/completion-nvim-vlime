@@ -1,0 +1,78 @@
+*completion-vlime.txt*	Common Lisp completion for Neovim version 0.5+	Last change: 2020-06-30
+                                                            *completion-vline*
+
+
+                               _      _   _~
+      ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __~
+     / __/ _ \| '_ ` _ \| '_ \| |/ _ \ __| |/ _ \| '_ \ ~
+    | (_| (_) | | | | | | |_) | |  __/ |_| | (_) | | | |~
+     \___\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|~
+                        |_|                         _ _~
+                                             __   _| (_)_ __ ___   ___ ~
+                                             \ \ / / | | '_ ` _ \ / _ \~
+                                              \ V /| | | | | | | |  __/~
+                                               \_/ |_|_|_| |_| |_|\___|~
+
+Author: Alejandro "HiPhish" Sanchez
+License: MIT (Expat) License
+
+Repository:
+    - https://gitlab.com/HiPhish/completion-nvim-vlime
+    - https://github.com/HiPhish/completion-nvim-vlime (mirror)
+
+Issue tracker:
+    - https://gitlab.com/HiPhish/completion-nvim-vlime/-/issues (preferred)
+    - https://github.com/HiPhish/completion-nvim-vlime/issues
+
+
+==============================================================================
+TABLE OF CONTENTS                                  *completion-vlime-contents*
+
+    1. Introduction ................................. |completion-vlime-intro|
+    2. Setup and configuration ...................... |completion-vlime-setup|
+
+
+==============================================================================
+INTRODUCTION                                          *completion-vlime-intro*
+
+This plugin provides a Vlime-based completion source for completion-nvim.
+
+Vlime is a client for the Common Lisp development server Swank, the same
+server used in the Slime plugin for Emacs. It provides many features for
+Common Lisp development, including auto-completion.
+
+Completion-nvim is an auto-completion engine for Neovim. It does not provide
+any completions of its own, it uses so-called sources for that. Some sources
+come bundled with completion-nvim, others can be installed as separate
+plugins.
+
+
+==============================================================================
+SETUP AND CONFIGURATION                               *completion-vlime-setup*
+
+You will need |vlime| and |completion-nvim| set up and working first. Then
+install this plugin as you would any other Neovim plugin.
+
+The new source will be registered automatically under the name 'vlime'. You
+still need to instruct completion-nvim to actually use it. Please refer to its
+documentation for more information, see |g:completion_chain_complete_list|.
+
+
+                                                 *g:completion_vlime_did_load*
+You can prevent the automatic registration of the source by defining the
+variable `g:completion_vlime_did_load`. Its value does not matter.
+
+
+                                                     *completion.source.vlime*
+The Lua module encapsulating the Vlime source. Its value is a table with the
+following entries:
+
+`source`
+    Table suitable as argument to `completion.addCompletionSource`.
+
+There might be other entries exposed, but they are not considered stable, do
+not rely on them.
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
