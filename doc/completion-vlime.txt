@@ -1,7 +1,6 @@
 *completion-vlime.txt*	Common Lisp completion for Neovim version 0.5+	Last change: 2020-06-30
                                                             *completion-vline*
 
-
                                _      _   _~
       ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __~
      / __/ _ \| '_ ` _ \| '_ \| |/ _ \ __| |/ _ \| '_ \ ~
