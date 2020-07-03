@@ -1,3 +1,5 @@
+local match = require 'completion.matching'
+
 local M = {}
 
 
@@ -51,8 +53,8 @@ end
 
 -- Entry point into completion. This function will be called by completion-nvim
 -- when completion items are requested.
-local function on_trigger(prefix, score_func, bufnr, _)
-	vim.call('completion#vlime#on_trigger', prefix)
+local function on_trigger(_, opt)
+	vim.call('completion#vlime#on_trigger', opt.prefix)
 end
 
 -- Will be called when completion-nvim notices that the source is ready and
@@ -62,7 +64,11 @@ local function on_completed(prefix, score)
 	-- Some sort of filtering might be in order here, we have way too many
 	-- elements to be useful, because anything which contains the given letters
 	-- in order matches.
-	return items
+  local matched_item = {}
+  for _, item in ipairs(items) do
+    match.matching(matched_item, prefix, item)
+  end
+  return matched_item
 end
 
 -- The source table which can be registered with completion-nvim
