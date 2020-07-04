@@ -60,15 +60,14 @@ end
 -- Will be called when completion-nvim notices that the source is ready and
 -- wants to request the results.
 local function on_completed(prefix, score)
+	-- Accumulate ompletion items suitable for processing by completion-nvim
+	local matched_items = {}
+	for _, item in ipairs(items) do
+		match.matching(matched_items, prefix, item)
+	end
+
 	ready = false
-	-- Some sort of filtering might be in order here, we have way too many
-	-- elements to be useful, because anything which contains the given letters
-	-- in order matches.
-  local matched_item = {}
-  for _, item in ipairs(items) do
-    match.matching(matched_item, prefix, item)
-  end
-  return matched_item
+	return matched_item
 end
 
 -- The source table which can be registered with completion-nvim
