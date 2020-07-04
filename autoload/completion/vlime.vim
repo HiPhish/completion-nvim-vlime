@@ -42,7 +42,7 @@ endfunction
 " ---[ Helper functions ]------------------------------------------------------
 
 " Determine whether to use fuzzy or simple completion. If nothing is specified
-" take an educated guess. function! s:use_fuzzy(connection)
+" take an educated guess.
 function! s:use_fuzzy(connection)
 	for l:scope in [b:, t:, g:]
 		if has_key(l:scope, 'completion_vlime_fuzzy')

@@ -5,7 +5,7 @@ local M = {}
 
 ---[ INTERNAL STATE ]----------------------------------------------------------
 local ready = false  -- Set to true when completion items are available
-local items    = {}  -- Stashed completion items so far
+local items = {}     -- Stashed completion items so far
 
 -- Helper function, filter a given list based on a predicate
 local function filter(items, pred)
