@@ -78,3 +78,6 @@ M.source = {
 }
 
 return M
+
+
+-- vim: tw=79 ts=4 noet

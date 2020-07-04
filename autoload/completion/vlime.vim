@@ -59,3 +59,6 @@ function! s:use_fuzzy(connection)
 	let l:contribs = get(a:connection.cb_data, 'contribs', [])
 	return index(l:contribs, 'SWANK-FUZZY') >= 0
 endfunction
+
+
+" vim: tw=79 ts=4 noet

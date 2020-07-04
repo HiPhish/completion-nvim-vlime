@@ -6,3 +6,6 @@ endif
 let g:completion_vlime_did_load = v:true
 
 lua require'completion'.addCompletionSource("vlime", require'completion.source.vlime'.source)
+
+
+" vim: tw=79 ts=4 noet
