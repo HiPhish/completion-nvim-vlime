@@ -67,7 +67,7 @@ local function on_completed(prefix, score)
 	end
 
 	ready = false
-	return matched_item
+	return matched_items
 end
 
 -- The source table which can be registered with completion-nvim
